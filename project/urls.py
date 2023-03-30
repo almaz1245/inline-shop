@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from main.views import index,detail,favorites,favorites_page, remove_form
+from main.views import index,detail,favorites,favorites_page, remove_form,cart,cart_page,delete
 from django.conf.urls.static import static
 from project.settings import MEDIA_ROOT,MEDIA_URL
 
@@ -25,6 +25,14 @@ urlpatterns = [
     path('det/<int:id>',detail,name='detail'),
     path('favorites/<int:id>',favorites,name='favorites'),
     path('favorite',favorites_page,name='favorites_page'),
-    path('remove_form',remove_form,name='remove_form'),
+    path('remove_form/<int:id>',remove_form,name='remove_form'),
+
+    path('cart/<int:id>', cart, name='cart'),
+    path('cartpage/', cart_page, name='cartpage'),
+    path('deleete/<int:id>', delete, name='deleete')
 ]
+
+
+
+
 urlpatterns += static(MEDIA_URL, document_root = MEDIA_ROOT)

@@ -64,7 +64,7 @@
 							<span class="color blue"></span>
 						</h5>
 						<div class="action">
-							<button class="add-to-cart btn btn-default" type="button">add to cart</button>
+							<a href="{% url 'cart' product.id %}" class="add-to-cart btn btn-default" type="button">add to cart</a>
 							<a href="{% url 'favorites' product.id %}" class="like btn btn-default" type="button"><span class="fa fa-heart"></span></a>
 							<a href="{% url 'remove_form' product.id %}">не нравиться</a>
 						</div>

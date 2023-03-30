@@ -31,21 +31,29 @@ def favorites(req,id):
     print(st)
     return render(req,'index.html',context)
 
+
 def cart(req, id):
-    cart_products = req.session.get('favorites_products', [])
+    cart_products = req.session.get('cart_products', [])
     cart_products.append(id)
     st = set(cart_products)
-    req.session['favorites_products'] = list(st)
-    nike = NewBalance.objects.all()
+    req.session['cart_products'] = list(st)
+    nike = Nike.objects.all()
     context = {'Nike':nike}
     print(st)
-    return render(req, 'index.html', context)
+    return HttpResponseRedirect('/')
+def delete(req,id):
+    cart_products = req.session.get('cart_products',[])
+    cart_products.remove(id)
+    req.session['cart_products'] = cart_products
+    return HttpResponseRedirect('/')
+
 
 def cart_page(req):
     cart_product = req.session.get('cart_products', [])
-    cart_products = NewBalance.objects.filter(id__in = cart_product)
+    cart_products = Nike.objects.filter(id__in = cart_product)
     context = {'product':cart_products}
-    return render(req, 'cart.html', context)
+    return render(req, 'card.html', context)
+
 
 def remove_from_cartpage(req,id):
     cart_products = req.session.get('cart_products', [])
