@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shop</title>
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+</head>
+<body>
+    <h1>auifhpqufhcn</h1>
+    <header>
+        <div class="container">
+            <div class="header__inner">
+                <a href="#">
+                    главная
+                </a> 
+                <a href="#">
+                    магазин
+                </a>
+                <a href="#">
+                    карзинка
+                </a>      
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card__inner">
+            {% for i in x %}
+            <div class="card__inner">
+                <div class="card">
+                    <img width="100%" src="{{i.image.url}}" alt="">
+                    <h3>{{i.title}}</h3>
+                    <p>{{i.ddescription}}</p>
+                    <p>{{i.price}}</p>
+                    <button>добавить в карзину</button>
+                </div>
+            
+            {% endfor %}
+
+        </div>
+
+        <div class="card__inner">
+            <div class="card">
+                <img width="100%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLwuoICrYY9JP_yH8CKX9YOBJu9fSP0kFSKWxkL8OK&s" alt="">
+                <h3>nike Air Jordan 1 </h3>
+                <p>descripton</p>
+                <button>добавить в карзину</button>
+            </div>
+            <div class="card">
+                <img width="100%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLwuoICrYY9JP_yH8CKX9YOBJu9fSP0kFSKWxkL8OK&s" alt="">
+                <h3>nike Air Jordan 1 </h3>
+                <p>descripton</p>
+                <button>добавить в карзину</button>
+            </div>
+            <div class="card">
+                <img width="100%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLwuoICrYY9JP_yH8CKX9YOBJu9fSP0kFSKWxkL8OK&s" alt="">
+                <h3>nike Air Jordan 1 </h3>
+                <p>descripton</p>
+                <button>добавить в карзину</button>
+            </div>
+        </div>
+
+    </div>
+   
+</body>
+</html>
