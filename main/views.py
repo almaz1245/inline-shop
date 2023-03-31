@@ -66,3 +66,9 @@ def favorites_page(req):
     favorites_products = req.session.get('favorites_products', []) 
     favorites_products = Nike.objects.filter(id__in = favorites_products) 
     return render(req,'favorite.html',{'nike':favorites_products})
+
+def abaut(req):
+    return render(req,'abaut.html')
+
+def auth(req):
+    return render(req, 'auth.html')
