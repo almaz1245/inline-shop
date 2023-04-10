@@ -9,16 +9,42 @@
     <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
 </head>
 <body>
-    <div class="container">
-        <div class="card__inner">
-            {% for i in product %}
-            <div class="card">
-                <img width="100%" src="{{i.images.url}}" alt="">
-                <h3><a href="{% url 'detail' i.id %}">{{i.title}}</a></h3>
-                <p>{{i.price}}</p>
-                <a href="{% url 'deleete' i.id %}">Delete</a>
+
+    <header>
+        <div class="container">
+            <div class="header__inner">
+                <a href="{% url 'home' %}">
+                    Главная
+                </a>
+                <a href="{% url 'home' %}">
+                    Магазин
+                </a>
+              
+                <h2>избранный</h2>
+              
             </div>
-            {% endfor %}
+        </div>
+    </header>
+    <div class="container">
+        <div class="cart">
+            <div class="cart_left">
+                {% for i in product %}
+                <div class="product_row">
+                    <img src="{{i.images.url}}" alt="">
+                    <div class="">
+                        <h3><a href="{% url 'detail' i.id %}">{{i.title}}</a></h3>
+                        <p>{{i.price}}</p>
+                        <a href="{% url 'deleete' i.id %}">Delete</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="cart_right">
+                <p>итоговая цена: {{total_price}} </p>
+                <p>количество товара: {{amount}} </p>
+                <a href="{% url 'order' %}">офформить заказ</a>
+            </div>
         </div>
     </div>
 </body>

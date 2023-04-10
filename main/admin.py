@@ -1,5 +1,5 @@
 from django.contrib import admin 
-from .models import Category, Nike, Image 
+from .models import Category, Nike, Image, Order, OrderItem 
 
 class ImagesInline(admin.TabularInline):
     model = Image
@@ -13,3 +13,5 @@ class NikeAdmin(admin.ModelAdmin):
 
 # Register your models here.
 admin.site.register(Category)
+admin.site.register(Order)
+admin.site.register(OrderItem)

@@ -23,19 +23,34 @@
                 <a href="{% url 'cartpage' %}">
                     Корзина
                 </a>
-           
+                
                 <a href="{% url 'favorites_page'  %}">
                     избранный
                 </a>
                 <a href="{% url 'abaut'  %}">
                     о нас
                 </a>
+                {% if not user.is_authenticated %}
                 <a href="{% url 'auth'  %}">
-                    регистрация
+                    sign_in registratsya
+                </a>
+                <a href="{% url 'sign_up'  %}">
+                    sign_up
+                </a>
+                {% endif %}
+                <a href="">
+                    {{user.username}}
+                </a>
+                <a href="{% url 'logout' %}">
+                    выйти
                 </a>
             </div>
         </div>
     </header>
+
+    {% for i in messages %}
+    {{i}}
+    {% endfor %}
 
     <div class="container">
         <div class="card__inner">

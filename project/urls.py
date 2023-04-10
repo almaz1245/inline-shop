@@ -15,14 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from main.views import index,detail,favorites,favorites_page, remove_form,cart,cart_page,delete,abaut,auth
+from main.views import *
 from django.conf.urls.static import static
 from project.settings import MEDIA_ROOT,MEDIA_URL
+from user.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index,name='home'),
-    path('auth', auth,name='auth'),
     path('abaut', abaut,name='abaut'),
     path('det/<int:id>',detail,name='detail'),
     path('favorites/<int:id>',favorites,name='favorites'),
@@ -31,11 +31,13 @@ urlpatterns = [
 
     path('cart/<int:id>', cart, name='cart'),
     path('cartpage/', cart_page, name='cartpage'),
-    path('deleete/<int:id>', delete, name='deleete')
+    path('delete/<int:id>', delete, name='deleete'),
 
+    path('auth/', authen,name='auth'),
+    path('sign_up/', sign_up,name='sign_up'),
+    path('logout', logout,name='logout'),
+    path('order/', order,name='order'),
 ]
-
-
 
 
 urlpatterns += static(MEDIA_URL, document_root = MEDIA_ROOT)

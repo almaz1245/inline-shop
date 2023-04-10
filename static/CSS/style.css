@@ -5,7 +5,7 @@
 }
 
 header {
-    background-color: aquamarine;
+    background-color: rgb(192, 151, 47);
     padding: 15px 0;
 }
 
@@ -20,7 +20,7 @@ header {
 }
 
 .header__inner a {
-    font-size: 40px;
+    font-size: 30px;
     text-decoration: none;
     color: white;
     font-family: 'Courier New', Courier, monospace;
@@ -61,4 +61,70 @@ header {
 
 .card button:hover {
     transform: scale(1.1);
+}
+
+.container form {
+    margin-top: 30px auto;
+    box-shadow: 0px 0px 10px #00000075;
+    border-radius: 15px;
+    padding: 10px 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.container form input {
+    margin: 5px 0;
+    padding: 5px 10px;
+}
+
+.authBtn {
+    width: 50%;
+    height: 40px;
+    text-align: center;
+    font-size: 20px;
+    background-color: coral;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    transform: .3s;
+}
+
+.authBtn:hover{
+    transform: scale(1.1);
+}
+
+
+
+.cart {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.cart_left.cart_right {
+    width: 50%;
+}
+.product_row {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+.product_row img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.product_row div {
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: space-between; 
+
+}
+.car_left {
+    gap: 40px;
 }
